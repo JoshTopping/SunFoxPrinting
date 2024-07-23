@@ -25,14 +25,12 @@ jobs:
         run: dotnet build --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}\Orleans.ShoppingCart.Silo
-
+        run: dotnet publish -c Release -o "D:\a\SunFoxPrinting\SunFoxPrinting\Silo\Orleans.ShoppingCart.Silo.csproj"
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: .net-app
-          path: ${{env.DOTNET_ROOT}}\Orleans.ShoppingCart.Silo
-
+          path: D:\a\SunFoxPrinting\SunFoxPrinting\Silo\Orleans.ShoppingCart.Silo.csproj
   deploy:
     runs-on: windows-latest
     needs: build
