@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35027.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SunFoxPrinting", "SunFoxPrinting\SunFoxPrinting.csproj", "{20A18CDA-C2EE-4237-A660-13CDD08472C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SunFoxPrinting", "SunFoxPrinting\SunFoxPrinting.csproj", "{20A18CDA-C2EE-4237-A660-13CDD08472C1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orleans.ShoppingCart.Abstractions", "Abstractions\Orleans.ShoppingCart.Abstractions.csproj", "{901539DF-45DD-4E2F-AFC5-1941238837C7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orleans.ShoppingCart.Grains", "Grains\Orleans.ShoppingCart.Grains.csproj", "{975B82BB-6133-4608-97C0-5EE2DE7A4BEA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orleans.ShoppingCart.Silo", "Silo\Orleans.ShoppingCart.Silo.csproj", "{803F380D-989A-4FB7-A69F-6B1CEEAE5534}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{20A18CDA-C2EE-4237-A660-13CDD08472C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20A18CDA-C2EE-4237-A660-13CDD08472C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20A18CDA-C2EE-4237-A660-13CDD08472C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{901539DF-45DD-4E2F-AFC5-1941238837C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{901539DF-45DD-4E2F-AFC5-1941238837C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{901539DF-45DD-4E2F-AFC5-1941238837C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{901539DF-45DD-4E2F-AFC5-1941238837C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{975B82BB-6133-4608-97C0-5EE2DE7A4BEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{975B82BB-6133-4608-97C0-5EE2DE7A4BEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{975B82BB-6133-4608-97C0-5EE2DE7A4BEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{975B82BB-6133-4608-97C0-5EE2DE7A4BEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{803F380D-989A-4FB7-A69F-6B1CEEAE5534}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{803F380D-989A-4FB7-A69F-6B1CEEAE5534}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{803F380D-989A-4FB7-A69F-6B1CEEAE5534}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{803F380D-989A-4FB7-A69F-6B1CEEAE5534}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

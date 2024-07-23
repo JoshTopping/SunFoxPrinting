@@ -1,0 +1,13 @@
+C:\Users\topp0\Source\Repos\SunFoxPrinting\Abstractions\bin\Debug\net8.0\Orleans.ShoppingCart.Abstractions.deps.json
+C:\Users\topp0\Source\Repos\SunFoxPrinting\Abstractions\bin\Debug\net8.0\Orleans.ShoppingCart.Abstractions.dll
+C:\Users\topp0\Source\Repos\SunFoxPrinting\Abstractions\bin\Debug\net8.0\Orleans.ShoppingCart.Abstractions.pdb
+C:\Users\topp0\Source\Repos\SunFoxPrinting\Abstractions\obj\Debug\net8.0\Orleans.ShoppingCart.Abstractions.csproj.AssemblyReference.cache
+C:\Users\topp0\Source\Repos\SunFoxPrinting\Abstractions\obj\Debug\net8.0\Orleans.ShoppingCart.Abstractions.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\topp0\Source\Repos\SunFoxPrinting\Abstractions\obj\Debug\net8.0\Orleans.ShoppingCart.Abstractions.AssemblyInfoInputs.cache
+C:\Users\topp0\Source\Repos\SunFoxPrinting\Abstractions\obj\Debug\net8.0\Orleans.ShoppingCart.Abstractions.AssemblyInfo.cs
+C:\Users\topp0\Source\Repos\SunFoxPrinting\Abstractions\obj\Debug\net8.0\Orleans.ShoppingCart.Abstractions.csproj.CoreCompileInputs.cache
+C:\Users\topp0\Source\Repos\SunFoxPrinting\Abstractions\obj\Debug\net8.0\Orleans.ShoppingCart.Abstractions.sourcelink.json
+C:\Users\topp0\Source\Repos\SunFoxPrinting\Abstractions\obj\Debug\net8.0\Orleans.ShoppingCart.Abstractions.dll
+C:\Users\topp0\Source\Repos\SunFoxPrinting\Abstractions\obj\Debug\net8.0\refint\Orleans.ShoppingCart.Abstractions.dll
+C:\Users\topp0\Source\Repos\SunFoxPrinting\Abstractions\obj\Debug\net8.0\Orleans.ShoppingCart.Abstractions.pdb
+C:\Users\topp0\Source\Repos\SunFoxPrinting\Abstractions\obj\Debug\net8.0\ref\Orleans.ShoppingCart.Abstractions.dll

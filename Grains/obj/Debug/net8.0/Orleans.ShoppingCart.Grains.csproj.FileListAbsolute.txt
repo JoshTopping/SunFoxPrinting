@@ -1,0 +1,16 @@
+C:\Users\topp0\Source\Repos\SunFoxPrinting\Grains\bin\Debug\net8.0\Orleans.ShoppingCart.Grains.deps.json
+C:\Users\topp0\Source\Repos\SunFoxPrinting\Grains\bin\Debug\net8.0\Orleans.ShoppingCart.Grains.dll
+C:\Users\topp0\Source\Repos\SunFoxPrinting\Grains\bin\Debug\net8.0\Orleans.ShoppingCart.Grains.pdb
+C:\Users\topp0\Source\Repos\SunFoxPrinting\Grains\bin\Debug\net8.0\Orleans.ShoppingCart.Abstractions.dll
+C:\Users\topp0\Source\Repos\SunFoxPrinting\Grains\bin\Debug\net8.0\Orleans.ShoppingCart.Abstractions.pdb
+C:\Users\topp0\Source\Repos\SunFoxPrinting\Grains\obj\Debug\net8.0\Orleans.ShoppingCart.Grains.csproj.AssemblyReference.cache
+C:\Users\topp0\Source\Repos\SunFoxPrinting\Grains\obj\Debug\net8.0\Orleans.ShoppingCart.Grains.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\topp0\Source\Repos\SunFoxPrinting\Grains\obj\Debug\net8.0\Orleans.ShoppingCart.Grains.AssemblyInfoInputs.cache
+C:\Users\topp0\Source\Repos\SunFoxPrinting\Grains\obj\Debug\net8.0\Orleans.ShoppingCart.Grains.AssemblyInfo.cs
+C:\Users\topp0\Source\Repos\SunFoxPrinting\Grains\obj\Debug\net8.0\Orleans.ShoppingCart.Grains.csproj.CoreCompileInputs.cache
+C:\Users\topp0\Source\Repos\SunFoxPrinting\Grains\obj\Debug\net8.0\Orleans.ShoppingCart.Grains.sourcelink.json
+C:\Users\topp0\Source\Repos\SunFoxPrinting\Grains\obj\Debug\net8.0\Orleans..EAC1FD6A.Up2Date
+C:\Users\topp0\Source\Repos\SunFoxPrinting\Grains\obj\Debug\net8.0\Orleans.ShoppingCart.Grains.dll
+C:\Users\topp0\Source\Repos\SunFoxPrinting\Grains\obj\Debug\net8.0\refint\Orleans.ShoppingCart.Grains.dll
+C:\Users\topp0\Source\Repos\SunFoxPrinting\Grains\obj\Debug\net8.0\Orleans.ShoppingCart.Grains.pdb
+C:\Users\topp0\Source\Repos\SunFoxPrinting\Grains\obj\Debug\net8.0\ref\Orleans.ShoppingCart.Grains.dll
