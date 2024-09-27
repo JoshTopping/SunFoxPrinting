@@ -23,3 +23,17 @@
 /Abstractions/bin/Debug/net8.0/Orleans.ShoppingCart.Abstractions.pdb
 /Abstractions/obj/Debug/net8.0/ref/Orleans.ShoppingCart.Abstractions.dll
 /Abstractions/obj/Debug/net8.0/refint/Orleans.ShoppingCart.Abstractions.dll
+/Grains/obj/Release/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+/Grains/obj/Release/net8.0/Orleans.ShoppingCart.Grains.AssemblyInfo.cs
+/Grains/obj/Release/net8.0/Orleans.ShoppingCart.Grains.AssemblyInfoInputs.cache
+/Grains/obj/Release/net8.0/Orleans.ShoppingCart.Grains.assets.cache
+/Grains/obj/Release/net8.0/Orleans.ShoppingCart.Grains.csproj.AssemblyReference.cache
+/Grains/obj/Release/net8.0/Orleans.ShoppingCart.Grains.GeneratedMSBuildEditorConfig.editorconfig
+/Grains/obj/Release/net8.0/Orleans.ShoppingCart.Grains.GlobalUsings.g.cs
+/Grains/obj/Debug/net8.0/ref/Orleans.ShoppingCart.Grains.dll
+/Grains/obj/Debug/net8.0/refint
+/Grains/obj/Debug/net8.0
+/Grains/bin/Debug/net8.0/Orleans.ShoppingCart.Abstractions.dll
+/Grains/bin/Debug/net8.0/Orleans.ShoppingCart.Abstractions.pdb
+/Grains/bin/Debug/net8.0/Orleans.ShoppingCart.Grains.dll
+/Grains/bin/Debug/net8.0/Orleans.ShoppingCart.Grains.pdb
