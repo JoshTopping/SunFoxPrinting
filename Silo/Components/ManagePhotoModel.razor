@@ -1,0 +1,93 @@
+<MudDialog>
+    <DialogContent>
+        <MudForm @ref="_form" Model=@Photo autocomplete="off">
+            <MudTextField Label="Name" HelperText="Product name"
+                          @bind-Value="Photo.Name" For="@(() => Photo.Name)" autocomplete="off" />
+            <MudTextField Label="Description" HelperText="Photo description"
+                          @bind-Value="Photo.Description" For="@(() => Photo.Description)" autocomplete="off" />
+            <MudSelect T="ProductCategory" Label="Category" Variant=Variant.Text AnchorOrigin=Origin.BottomCenter>
+                @foreach (var category in Enum.GetValues<ProductCategory>())
+                {
+                    <MudSelectItem T="ProductCategory" Value=@category />
+                }
+            </MudSelect>
+            <MudNumericField @bind-Value=Photo.Quantity Label="Quantity" Variant="Variant.Text" />
+        </MudForm>
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick=@Close Color=Color.Secondary Variant=Variant.Filled
+                   Size=Size.Large Disabled=@_isSaving>Cancel</MudButton>
+        <MudButton StartIcon=@Icons.Material.Filled.Save
+                   Color=Color.Primary Size=Size.Large Variant=Variant.Filled
+                   OnClick=@Save Disabled=@_isSaving>
+            @if (_isSaving)
+            {
+                <MudProgressCircular Class="ms-n1" Size="Size.Small" Indeterminate="true" />
+                <MudText Class="ms-2">Saving</MudText>
+            }
+            else
+            {
+                <MudText>Save</MudText>
+            }
+        </MudButton>
+    </DialogActions>
+</MudDialog>
+
+@code {
+    bool _isSaving;
+    MudForm? _form;
+
+    public PhotoDetails Photo { get; set; } = new();
+
+    [CascadingParameter] MudDialogInstance MudDialog { get; set; } = null!;
+
+    [Parameter, EditorRequired]
+    public EventCallback<PhotoDetails> PhotoUpdated { get; set; }
+
+    [Inject]
+    public IDialogService DialogService { get; set; } = null!;
+
+    public void Open(string title, Func<PhotoDetails, Task> onProductUpdated) =>
+        DialogService.Show<ManageProductModal>(
+            title, new DialogParameters()
+            {
+                { 
+                    nameof(PhotoUpdated),
+                    new EventCallbackFactory().Create(
+                        this, new Func<PhotoDetails, Task>(onProductUpdated))
+                }
+            });
+
+    public void Close() => MudDialog?.Cancel();
+
+    private Task Save()
+    {
+        if (_form is not null)
+        {
+            _form.Validate();
+            if (_form.IsValid)
+            {
+                return OnValidSubmitAsync();
+            }
+        }
+
+        return Task.CompletedTask;
+    }
+
+    private async Task OnValidSubmitAsync()
+    {
+        if (Photo is not null && PhotoUpdated.HasDelegate)
+        {
+            try
+            {
+                _isSaving = true;
+                await PhotoUpdated.InvokeAsync(Photo);
+            }
+            finally
+            {
+                _isSaving = false;
+                Close();
+            }
+        }
+    }
+}

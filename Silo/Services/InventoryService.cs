@@ -11,6 +11,19 @@ public sealed class InventoryService : BaseClusterService
     {
     }
 
+    public async Task<HashSet<PhotoDetails>> GetAllPhotosAsync()
+    {
+        var getAllPhotosTasks = Enum.GetValues<PhotoCategory>()
+            .Select(category =>
+                _client.GetGrain<IInventoryGrain>(category.ToString()))
+            .Select(grain => grain.GetAllPhotosAsync())
+            .ToList();
+
+        var allPhotos = await Task.WhenAll(getAllPhotosTasks);
+
+        return new HashSet<PhotoDetails>(allPhotos.SelectMany(photos => photos));
+    }
+
     public async Task<HashSet<ProductDetails>> GetAllProductsAsync()
     {
         var getAllProductsTasks = Enum.GetValues<ProductCategory>()
