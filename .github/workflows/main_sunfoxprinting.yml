@@ -25,15 +25,12 @@ jobs:
         run: dotnet build --configuration Release
 
       - name: dotnet publish
-      
-        run: dotnet publish -c Release -o "${{env.GITHUB_WORKSPACE}}\myapp"
-
+        run: dotnet publish -c Release -o "D:\a\SunFoxPrinting\SunFoxPrinting\Silo\Orleans.ShoppingCart.Silo.csproj"
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: .net-app
-          path: ${{env.GITHUB_WORKSPACE}}/myapp
-
+          path: D:\a\SunFoxPrinting\SunFoxPrinting\Silo\Orleans.ShoppingCart.Silo.csproj
   deploy:
     runs-on: windows-latest
     needs: build
@@ -52,9 +49,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_1D8BE77E538347BCB8471A78863DE969 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_A3F02F811F0E41A1BCE5544A05308B29 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_92C028C086BD417F8A3AAB415DCAC5F8 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_101DA3F579D943C78161862F3242E299 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_43FD4B554EA947BD81B480A52D325B42 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_B6AE093D47EA4B449E399AE450435222 }}
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
