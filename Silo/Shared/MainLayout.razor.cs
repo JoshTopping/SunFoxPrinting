@@ -11,20 +11,13 @@ public partial class MainLayout
 
     readonly MudTheme _theme = new()
     {
-        Palette = new PaletteLight()
-        {
-            Tertiary = "#7e6fff",
-            DrawerIcon = "#aaa9b9",
-            DrawerText = "#aaa9b9",
-            DrawerBackground = "#303030"
-        },
         PaletteDark = new PaletteDark()
         {
             Primary = "#7e6fff",
             Tertiary = "#7e6fff",
             Surface = "#1e1e2d",
             Background = "#1a1a27",
-            BackgroundGrey = "#151521",
+            BackgroundGray = "#151521",
             AppbarText = "#92929f",
             AppbarBackground = "rgba(26,26,39,0.8)",
             DrawerBackground = "#1a1a27",

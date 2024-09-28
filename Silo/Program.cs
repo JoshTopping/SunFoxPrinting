@@ -4,12 +4,18 @@
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddMudServices();
+
+builder.Services.AddMudServices(options =>
+{
+    options.PopoverOptions.ThrowOnDuplicateProvider = false;
+});
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddSingleton<ShoppingCartService>();
 builder.Services.AddSingleton<InventoryService>();
 builder.Services.AddSingleton<ProductService>();
+builder.Services.AddSingleton<PhotoService>();
 builder.Services.AddScoped<ComponentStateChangedObserver>();
 builder.Services.AddSingleton<ToastService>();
 builder.Services.AddLocalStorageServices();
