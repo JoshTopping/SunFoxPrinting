@@ -10,7 +10,6 @@
   <ItemGroup>
     <PackageReference Include="Aspire.Npgsql" Version="8.2.1" />
     <PackageReference Include="Azure.Identity" Version="1.12.0" />
-    <PackageReference Include="Azure.Storage.Blobs" Version="12.22.1" />
     <PackageReference Include="Azure.Storage.Files.Shares" Version="12.20.0" />
     <PackageReference Include="Blazor.Serialization" Version="8.0.0" />
     <PackageReference Include="Blazor.LocalStorage" Version="8.0.0" />

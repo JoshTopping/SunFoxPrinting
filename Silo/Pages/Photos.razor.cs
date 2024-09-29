@@ -1,15 +1,21 @@
 ﻿// Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT License.
 
+using Azure.Storage.Files.Shares.Models;
+using Azure.Storage.Files.Shares;
 using Microsoft.AspNetCore.Components.Forms;
 using Orleans.ShoppingCart.Silo.Components;
+using System.Collections;
 
 namespace Orleans.ShoppingCart.Silo.Pages;
 
 public sealed partial class Photos
 {
+    
+
     private HashSet<PhotoDetails>? _photos;
     private ManagePhotoModal? _modal;
+    private string _imageSource = null!;
 
     [Parameter]
     public string? Id { get; set; }
@@ -29,8 +35,40 @@ public sealed partial class Photos
     private readonly List<string> _fileNames = new();
     private MudFileUpload<IReadOnlyList<IBrowserFile>>? _fileUpload;
 
-    protected override async Task OnInitializedAsync() =>
-        _photos = await InventoryService.GetAllPhotosAsync();
+    protected override void OnInitialized()
+    {
+        _photos = PhotoService.GetAllPhotos();
+
+        //
+        string connectionString = "DefaultEndpointsProtocol=https;AccountName=sunfoxprintingsa;AccountKey=N54lzRdCpBehzbs13MyukpaVSARUdJ7vgKKeR8vfuRXKWeDuf7QrRD86uWnm2whS9up9g06urcK9+AStkLoJXA==;EndpointSuffix=core.windows.net";
+
+        // Name of the share, directory, and file we'll download from
+        string shareName = "sunfoxprintingphotos";
+        string dirName = "Photos";
+        string fileName = "photo 2018-12-28, 4 43 20 pm (1).jpg";
+
+        // Path to the save the downloaded file
+        //string localFilePath = @"<path_to_local_file>";
+
+        // Get a reference to the file
+        ShareClient share = new ShareClient(connectionString, shareName);
+        ShareDirectoryClient directory = share.GetDirectoryClient(dirName);
+        ShareFileClient file = directory.GetFileClient(fileName);
+
+        // Download the file
+        ShareFileDownloadInfo download = file.Download();
+        //using (FileStream stream = File.OpenRead(download.Content))
+
+        using (Stream stream = file.OpenRead())
+        {
+            MemoryStream ms = new MemoryStream();
+            stream.CopyTo(ms);
+            byte[] byteArray = ms.ToArray();
+            var imagesrc = download.Content.ToString();
+            var b64String = Convert.ToBase64String(byteArray);
+            _imageSource = "data:image/jpg;base64," + b64String;
+        }
+    }
 
     private void UploadPhotos()
     {
@@ -49,7 +87,7 @@ public sealed partial class Photos
     private async Task OnPhotoUpdated(PhotoDetails photo)
     {
         await PhotoService.CreateOrUpdatePhotoAsync(photo);
-        _photos = await InventoryService.GetAllPhotosAsync();
+        //_photos = await PhotoService.GetAllPhotos();
 
         _modal?.Close();
 
@@ -87,9 +125,7 @@ public sealed partial class Photos
         Snackbar.Configuration.PositionClass = Defaults.Classes.Position.TopCenter;
         Snackbar.Add("TODO: Upload your files!");
 
-
-
-        PhotoService.CreateOrUpdatePhotoAsync(_fileUpload.Files.First());
+        //PhotoService.CreateOrUpdatePhotoAsync(_fileUpload.Files.First());
     }
 
     private void SetDragClass()

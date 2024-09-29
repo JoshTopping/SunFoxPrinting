@@ -1,12 +1,15 @@
 ﻿// Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT License.
 
+using Npgsql;
+
 namespace Orleans.ShoppingCart.Silo.Services;
 
 public class BaseClusterService
 {
     private readonly IHttpContextAccessor _httpContextAccessor = null!;
     protected readonly IClusterClient _client = null!;
+    protected readonly NpgsqlDataSource _dataSource = null!;
 
     public BaseClusterService(
         IHttpContextAccessor httpContextAccessor, IClusterClient client) =>

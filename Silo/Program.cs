@@ -19,6 +19,8 @@ builder.Services.AddSingleton<PhotoService>();
 builder.Services.AddScoped<ComponentStateChangedObserver>();
 builder.Services.AddSingleton<ToastService>();
 builder.Services.AddLocalStorageServices();
+builder.Services.AddSingleton<SunfoxPrintingContext>();
+
 
 if (builder.Environment.IsDevelopment())
 {

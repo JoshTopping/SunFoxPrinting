@@ -7,6 +7,11 @@ test photos
     </MudButton>
     <MudDivider Vertical="true" FlexItem="true" Class="my-3 mx-4"/>
 </PhotoTable>
+
+@if (_imageSource is not null)
+{
+    <MudImage Fluid="false" Src="@_imageSource" Alt="Swedish Farm House" Class="rounded-lg" />
+}
 <ManagePhotoModal @ref=_modal PhotoUpdated=@OnPhotoUpdated />
 
 @inject ISnackbar Snackbar
