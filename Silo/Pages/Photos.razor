@@ -10,7 +10,7 @@ test photos
 
 @if (_imageSource is not null)
 {
-    <MudImage Fluid="false" Src="@_imageSource" Alt="Swedish Farm House" Class="rounded-lg" />
+    <MudImage Fluid="true" Src="@_imageSource" Alt="Swedish Farm House" Class="rounded-lg" />
 }
 <ManagePhotoModal @ref=_modal PhotoUpdated=@OnPhotoUpdated />
 

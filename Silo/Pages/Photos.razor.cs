@@ -46,6 +46,7 @@ public sealed partial class Photos
         string shareName = "sunfoxprintingphotos";
         string dirName = "Photos";
         string fileName = "photo 2018-12-28, 4 43 20 pm (1).jpg";
+        //string fileName = "IMG_1828.HEIC";
 
         // Path to the save the downloaded file
         //string localFilePath = @"<path_to_local_file>";
