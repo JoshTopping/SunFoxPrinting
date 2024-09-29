@@ -11,12 +11,14 @@ namespace Orleans.ShoppingCart.Silo.Services;
 
 public sealed class PhotoService : BaseClusterService
 {
-    SunfoxPrintingContext Context { get; set; } 
+    //SunfoxPrintingContext Context { get; set; } 
+    IConfiguration Configuration { get; set; }
+
     public PhotoService(
-        IHttpContextAccessor httpContextAccessor, IClusterClient client, SunfoxPrintingContext context) :
+        IHttpContextAccessor httpContextAccessor, IClusterClient client, IConfiguration configuration) :
         base(httpContextAccessor, client)
     {
-        Context = context;
+        Configuration = configuration;
     }
 
     public Task CreateOrUpdatePhotoAsync(PhotoDetails photo) =>
@@ -45,9 +47,11 @@ public sealed class PhotoService : BaseClusterService
     public HashSet<PhotoDetails> GetAllPhotos()
     {
         HashSet<PhotoDetails> photos = new();
-        if (Context != null)
+        using var context = new SunfoxPrintingContext(Configuration);
+
+        if (context != null)
         {
-            List<Photo> dbPhotos = Context.Photos.ToList();
+            List<Photo> dbPhotos = context.Photos.ToList();
             foreach (var dbPhoto in dbPhotos)
             {
                 PhotoDetails photoDetails = new PhotoDetails();

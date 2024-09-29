@@ -6,13 +6,19 @@ namespace Orleans.ShoppingCart.Silo;
 
 public partial class SunfoxPrintingContext : DbContext
 {
-    public SunfoxPrintingContext()
+
+    // requires using Microsoft.Extensions.Configuration;
+    private readonly IConfiguration Configuration;
+
+    public SunfoxPrintingContext(IConfiguration configuration)
     {
+        Configuration = configuration;
     }
 
-    public SunfoxPrintingContext(DbContextOptions<SunfoxPrintingContext> options)
+    public SunfoxPrintingContext(DbContextOptions<SunfoxPrintingContext> options, IConfiguration configuration)
         : base(options)
     {
+        Configuration = configuration;
     }
 
     public virtual DbSet<Client> Clients { get; set; }
@@ -20,8 +26,14 @@ public partial class SunfoxPrintingContext : DbContext
     public virtual DbSet<Photo> Photos { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseNpgsql("Host=localhost;Database=SunfoxPrinting;Username=postgres;Password=3Tertles");
+    {
+        //IConfigurationRoot configuration = new ConfigurationBuilder()
+        //   .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+        //   .AddJsonFile("appsettings.json")
+        //   .Build();
+        ////optionsBuilder.UseNpgsql("Name=SunfoxPrintingContext:ConnectionString");
+        optionsBuilder.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"));
+    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

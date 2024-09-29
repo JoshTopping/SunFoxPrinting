@@ -1,6 +1,20 @@
 ﻿// Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT License.
 
+using Azure.Storage.Files.Shares;
+using System;
+using System.Configuration;
+using System.IO;
+using System.Threading.Tasks;
+using Azure;
+using Azure.Storage;
+using Azure.Storage.Blobs;
+using Azure.Storage.Files.Shares.Models;
+using Azure.Storage.Sas;
+using Microsoft.Build.Framework;
+using Microsoft.Extensions.Options;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddMudServices();
@@ -19,7 +33,24 @@ builder.Services.AddSingleton<PhotoService>();
 builder.Services.AddScoped<ComponentStateChangedObserver>();
 builder.Services.AddSingleton<ToastService>();
 builder.Services.AddLocalStorageServices();
-builder.Services.AddSingleton<SunfoxPrintingContext>();
+//builder.Services.AddDbContextFactory<SunfoxPrintingContext>(
+//    options => 
+//        options.UseNpgsql(confi)
+//          IConfigurationRoot configuration = new ConfigurationBuilder()
+//           .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+//           .AddJsonFile("appsettings.json")
+//           .Build();
+//optionsBuilder.UseNpgsql("Name=SunfoxPrintingContext:ConnectionString");
+//optionsBuilder.UseNpgsql(configuration.GetConnectionString("SunfoxPrintingContext: ConnectionString"));
+
+//    );
+//builder.Services.AddSingleton<SunfoxPrintingContext>();
+
+//builder.Services.AddSingleton<ShareClient>(
+//    options =>
+//        options
+//    );
+
 
 
 if (builder.Environment.IsDevelopment())
@@ -51,6 +82,7 @@ else
 }
 
 var app = builder.Build();
+//builder.Services.AddSingleton<IConfiguration>(app.Configuration);
 
 if (app.Environment.IsDevelopment())
 {
